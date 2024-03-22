@@ -1,0 +1,78 @@
+import random
+
+vida_cap = 10
+vida_hum = 10
+
+
+
+print("-----------------------------------------------------------" )
+print("-----------------------------------------------------------" )
+print("-----------------------------------------------------------" )
+print("-----------------------------------------------------------" )
+print("------------------HUMAN  X  CAPIVARA-----------------------" )
+print("_/﹋\_-----------------------------------------------------" )
+print("(҂`_´)--------------------------------------^..^____/------" )
+print("<;︻╦╤─ *-*-*-*-*-*-*-*-*-*------------------\./ ___)------" )
+print("-----------------------------------------------||  || -----" )
+print("\n")
+print("\n")
+print("\n")
+
+
+player = int(input("Você é 1-humano ou 2-Capivara? "))
+
+if player == 1:
+    print("Você é um Humano explorando o mundo")
+    print("Apareceu uma capivara mutante e faminta por sangue humano")
+    print("--^..^____/--")
+    print("---\./ ___)--")
+    print("-----||  ||--")
+    player1 = "Humano"
+
+else:
+    print("Você é uma Capivara mutante sedenta por sangue humano")
+    print("Apareceu um humano, mas não parece ser uma presa fácil.")
+    print("_/﹋\_")
+    print("(҂`_´")
+    print("<;︻╦╤─")
+    player2 = "capivara"
+    
+
+while vida_hum > 0 and vida_cap > 0:
+    print("\nLife Human: ", vida_hum)
+    print("Life Capivara: ", vida_cap)
+    
+    
+    if player == 1:
+        input("\nAperte enter para atirar")
+        tiro = random.choice([True, False])  
+        
+        if tiro:
+            dano = random.randint(1, 2)
+            print("Toma! Bem no alvo")
+            print("_/﹋\_")
+            print("(҂`_´")
+            print("<;︻╦╤─")
+            vida_cap -= dano
+        else:
+            dano = random.randint(1, 2)
+            print("Você errou o tiro e sofreu um ataque!".format(player1))
+            vida_hum -= dano
+
+    else:
+        input("\naperte enter para morder")
+        mordida = random.choice([True, False])  
+        
+        if mordida:
+            dano = random.randint(1, 2)
+            print("GRRRRRRRRRR")
+            vida_hum -= dano
+        else:
+            tiro = random.randint(1,2)
+            print("Você errou e levou um tiro")
+            vida_cap -= dano
+    if vida_hum <= 0:
+        print("Você virou Comida de CAPIVARA")
+    if vida_cap <=0:
+        print("\nCarne de CAPIVARA PARA O JANTAR")
+
