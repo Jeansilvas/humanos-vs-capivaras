@@ -77,3 +77,62 @@ def startJogo():
 
 # MAIN():       
 menu()
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+import random
+
+vida_cap = 10
+vida_hum = 10
+
+
+print("-----------------------------------------------------------" )
+print("-----------------------------------------------------------" )
+print("-----------------------------------------------------------" )
+print("-----------------------------------------------------------" )
+print("------------------HUMAN  X  CAPIVARA-----------------------" )
+print("_/﹋\_-----------------------------------------------------" )
+print("(҂`_´)--------------------------------------^..^____/------" )
+print("<;︻╦╤─ *-*-*-*-*-*-*-*-*-*------------------\./ ___)------" )
+print("-----------------------------------------------||  || -----" )
+print("\n")
+print("\n")
+print("\n")
+
+
+player = int(input("Você é 1-humano ou 2-Capivara? "))
+
+if player == 1:
+    print("Você é um Humano explorando o mundo")
+    print("Apareceu uma capivara mutante e faminta por sangue humano")
+    print("--^..^____/--")
+    print("---\./ ___)--")
+    print("-----||  ||--")
+    player1 = "Humano"
+    player2 = "capivara"
+else:
+    print("Você é uma Capivara mutante sedenta por sangue humano")
+    print("Apareceu um humano, mas não parece ser uma presa fácil.")
+    print("_/﹋\_")
+    print("(҂`_´")
+    print("<;︻╦╤─")
+    player1 = "Capivara"
+    player2 = "Humano"
+
+while vida_hum > 0 and vida_cap > 0:
+    print("Life Human: ", vida_hum)
+    print("Life Capivara: ", vida_cap)
+    
+    if player == 1:
+        input("Aperte enter para o ataque")
+        dano = random.randint(1, 2)
+        print("{} deu {} de dano!".format(player1, dano))
+        vida_cap -= dano
+    else:
+        input("Aperte enter para o ataque")
+        dano = random.randint(1, 2)
+        print("{} deu {} de dano!".format(player2, dano))
+        vida_hum -= dano
+
+player = 1 if player == 2 else 2
